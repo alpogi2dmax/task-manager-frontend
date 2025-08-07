@@ -1,0 +1,16 @@
+.welcome-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 600px;
+}
+
+.welcome-container button {
+  border: grey solid 1px;
+  padding: 5px 20px;
+  border-radius: 10px;
+  margin-top: 5px;
+  background-color: rgb(202, 140, 23);
+  color: white;
+  cursor: pointer
+}

@@ -7,6 +7,7 @@ import Login from "@/component/Login";
 import { AddTask } from "@/component/AddTask";
 import { loginAction } from "@/lib/actions";
 import { TaskTable } from "@/component/TaskTable";
+import { Welcome } from "@/component/Welcome";
 import { logout } from "@/lib/logout";
 import { Trash2 } from 'lucide-react'
 
@@ -31,7 +32,7 @@ export default function Home(): JSX.Element {
 
   return (
     <main>
-      <div className='welcome-container'>
+      {/* <div className='welcome-container'>
         <h1>Welcome {user.username}!</h1>
         <div className ='welcome-button-container'>
           <button onClick={async () => {
@@ -42,7 +43,8 @@ export default function Home(): JSX.Element {
             Logout
           </button>
         </div>
-      </div>
+      </div> */}
+      <Welcome />
       <TaskTable />
       <button onClick={handleAddTask}>{isAddingTask ? 'Cancel' : 'Add Task'}</button>
       {isAddingTask && <AddTask setIsAddingTask={setIsAddingTask} />}

@@ -10,6 +10,7 @@ import Link from 'next/link'
 import './taskdetails.css'
 import { handleChangeStatus, handleDeleteTask } from "@/lib/taskHandlers"
 import { updateTaskStatus, updateTask } from "@/lib/actions"
+import { Welcome } from "@/component/Welcome"
 
 interface Props {
     params: {
@@ -69,19 +70,8 @@ function TaskDetails({ taskDetail }: { taskDetail: Task }) {
 
 
     return (
-        <>
-            {/* <div className='welcome-container'>
-                <h1>Welcome {user.username}!</h1>
-                <div className ='welcome-button-container'>
-                    <button onClick={async () => {
-                    await logout()
-                    setUser(null)
-                    setTasks([])
-                    }}>
-                    Logout
-                    </button>
-                </div>
-            </div> */}
+        <div className='task-wrapper'>
+            <Welcome />
             <div className='page-wrapper'>
                 <div className='task-details'>
                     <div className='back-link-wrapper'>
@@ -136,6 +126,6 @@ function TaskDetails({ taskDetail }: { taskDetail: Task }) {
                     )}
                 </div>
             </div>
-        </>
+        </div>
     )
 }
