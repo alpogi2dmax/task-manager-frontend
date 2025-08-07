@@ -1,0 +1,86 @@
+.page-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.task-details {
+    margin: 1rem;
+    margin-top: 1rem;
+    width: 600px;
+    background-color: rgb(202, 140, 23);
+    border-radius: 20px;
+    padding: 20px;
+    color: rgb(236, 236, 236)
+}
+
+.back-link-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.task-object {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem
+}
+
+.task-object h1 {
+    width: 100px;
+    flex-shrink: 0; /* prevent it from shrinking */
+}
+
+.task-object h2 {
+    flex: 1; /* take remaining space */
+    word-wrap: break-word; /* wrap long words */
+}
+
+.task-detail-actions {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.task-detail-actions > button {
+    cursor: pointer
+}
+
+.task-detail-actions .check-icon {
+  width: 20px;
+  height: 20px;
+  color: white;
+}
+
+.task-detail-actions .check-box {
+  background-color: rgb(28, 122, 153);
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.task-object label {
+    width: 100px;
+}
+
+.task-object input,
+.task-object textarea {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-top: 0.25rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+.edit-button {
+  background-color: rgb(28, 122, 153);
+  color: white;
+  padding: 5px 20px;
+  border-radius: 10px;
+
+}

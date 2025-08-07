@@ -1,0 +1,55 @@
+.task-count {
+  margin-top: 20px;
+}
+
+.task-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-left-width: 4px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  background-color: #fff;
+}
+
+.task-card.completed {
+  border-left-color: rgb(28, 122, 153);
+}
+
+.task-card.ongoing {
+  border-left-color: rgb(202, 140, 23);
+}
+
+.task-actions {
+  display: flex;
+  gap: 3rem;
+  margin-right: 1rem;
+}
+
+.status-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.check-icon {
+  width: 20px;
+  height: 20px;
+  color: black;
+}
+
+.check-box {
+  background-color: rgb(164, 203, 218); /* Tailwind's green-500 */
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-task {
+    cursor: pointer
+}
