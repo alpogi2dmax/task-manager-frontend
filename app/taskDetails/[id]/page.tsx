@@ -9,7 +9,7 @@ import type { UserContextType } from "@/types/user"
 import Link from 'next/link'
 import './taskdetails.css'
 import { handleChangeStatus, handleDeleteTask } from "@/lib/taskHandlers"
-import { updateTaskStatus, updateTask } from "@/lib/actions"
+import { updateTask } from "@/lib/actions"
 import { Welcome } from "@/component/Welcome"
 
 interface Props {
@@ -32,7 +32,7 @@ export default function TaskDetailsWrapper({ params }: Props) {
 
 function TaskDetails({ taskDetail }: { taskDetail: Task }) {
 
-    const { user, token, setTasks } = useContext(UserContext) as UserContextType
+    const { token, setTasks } = useContext(UserContext) as UserContextType
     const router = useRouter()
 
     const [isEditing, setIsEditing] = useState(false)
@@ -63,7 +63,7 @@ function TaskDetails({ taskDetail }: { taskDetail: Task }) {
         try {
             await handleDeleteTask(taskDetail, token, setTasks)
             router.push('/')
-        } catch (error) {
+        } catch {
             alert('Failed to delete task.')
         }
     }

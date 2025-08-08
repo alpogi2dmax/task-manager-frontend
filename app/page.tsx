@@ -1,24 +1,23 @@
 'use client'
 
-import Image from "next/image";
-import { JSX, useContext, useState, useTransition } from "react";
+
+import { JSX, useContext, useState } from "react";
 import { UserContext } from "@/context/UserContext";
 import Login from "@/component/Login";
 import { AddTask } from "@/component/AddTask";
-import { loginAction } from "@/lib/actions";
+import type { User } from "@/types/user";
 import { TaskTable } from "@/component/TaskTable";
 import { Welcome } from "@/component/Welcome";
-import { logout } from "@/lib/logout";
-import { Trash2 } from 'lucide-react'
+
 
 
 export default function Home(): JSX.Element {
 
-  const { user, setUser, tasks, setTasks, token, setToken } = useContext(UserContext)
+  const { user, setUser, setTasks, setToken } = useContext(UserContext)
 
   const [isAddingTask, setIsAddingTask] = useState(false)
 
-  function handleLoginSucess(user: any, token: string): void {
+  function handleLoginSucess(user: User, token: string): void {
     setUser(user)
     setTasks([...user.tasks])
     setToken(token)
