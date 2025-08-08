@@ -1,7 +1,7 @@
 
 
 export async function registerAction(formData: FormData) {
-    const res = await fetch ('http://localhost:5000/api/register', {
+    const res = await fetch ('https://task-manager-backend-dsy7.onrender.com/api/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -25,7 +25,7 @@ export async function loginAction(formData: FormData) {
     const username = formData.get('username')
     const password = formData.get('password')
 
-    const res = await fetch('http://localhost:5000/api/login', {
+    const res = await fetch('https://task-manager-backend-dsy7.onrender.com/api/login', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({username, password})
@@ -49,7 +49,7 @@ export async function addTaskAction(formData: FormData, token: string) {
     const description = formData.get('description')
     // const user_id = formData.get('user_id')
 
-    const res = await fetch('http://localhost:5000/api/tasks', {
+    const res = await fetch('https://task-manager-backend-dsy7.onrender.com/api/tasks', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -73,7 +73,7 @@ export async function addTaskAction(formData: FormData, token: string) {
 
 export async function updateTaskStatus(taskId: number, completed: boolean, token: string) {
     console.log(`Task Id: ${taskId}` )
-    const res = await fetch(`http://localhost:5000/api/tasks/${taskId}`, {
+    const res = await fetch(`https://task-manager-backend-dsy7.onrender.com/api/tasks/${taskId}`, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json',
@@ -96,7 +96,7 @@ export async function updateTask(
     description: string,
     token: string
 ) {
-    const res = await fetch(`http://localhost:5000/api/tasks/${id}`, {
+    const res = await fetch(`https://task-manager-backend-dsy7.onrender.com/api/tasks/${id}`, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json',
@@ -110,7 +110,7 @@ export async function updateTask(
 
 
 export async function deleteTask(taskId: number, token: string | null) {
-    const res = await fetch(`http://localhost:5000/api/tasks/${taskId}`, {
+    const res = await fetch(`https://task-manager-backend-dsy7.onrender.com/api/tasks/${taskId}`, {
         method: 'DELETE',
         headers: {
             'Authorization': `Bearer ${token}`,

@@ -7,9 +7,10 @@
     margin: auto;
     /* max-width: 400px; */
     max-width: 400px;
-    background-color: beige;
+    background-color: rgb(202, 140, 23);
     padding: 50px;
     border-radius: 40px;
+    color: rgb(236, 236, 236)
 }
 
 .signup-page > form {
@@ -22,7 +23,7 @@
     border: black solid 1px;
     padding: 5px;
     border-radius: 20px;
-    background-color: lightblue;
+    background-color: rgb(28, 122, 153);
 }
 
 .signup-page input {
