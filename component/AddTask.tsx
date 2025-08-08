@@ -2,6 +2,7 @@
 import React, { useState, useTransition, useContext } from "react"
 import { UserContext } from "@/context/UserContext"
 import { addTaskAction } from "@/lib/actions"
+import type { UserContextType } from "@/types/user"
 import './addtask.css'
 
 interface AddTaskProps {
@@ -10,7 +11,7 @@ interface AddTaskProps {
 
 export function AddTask({ setIsAddingTask }: AddTaskProps) {
 
-    const { user, setTasks, tasks, token } = useContext(UserContext)
+    const { user, setTasks, tasks, token } = useContext(UserContext) as UserContextType
 
     const [error, setError] = useState<string | null>('')
     const [isPending, startTransition] = useTransition()
@@ -30,6 +31,10 @@ export function AddTask({ setIsAddingTask }: AddTaskProps) {
     
             startTransition(async () => {
                 try {
+                    if (!token) {
+                        alert('You must be logged in to add a task.');
+                        return;
+                    }
                     const result = await addTaskAction(formData, token)
                     setTasks(prevTasks => [...prevTasks, result.data])
                     setIsAddingTask(false)
