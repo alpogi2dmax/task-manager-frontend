@@ -1,5 +1,3 @@
-'use client'
-
 import TaskDetailsClient from "./TaskDetailsClient"
 
 interface PageProps {

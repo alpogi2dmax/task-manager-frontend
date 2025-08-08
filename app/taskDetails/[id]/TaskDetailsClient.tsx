@@ -34,7 +34,7 @@ function TaskDetailsInner({ taskDetail }: { taskDetail: Task }) {
   // Redirect to login if no token
   useEffect(() => {
     if (!token) {
-      router.push('/login')  // or whatever your login route is
+      router.push('/')  // or whatever your login route is
     }
   }, [token, router])
 
