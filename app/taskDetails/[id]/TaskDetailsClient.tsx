@@ -17,8 +17,20 @@ interface Props {
 }
 
 export default function TaskDetailsClient({ taskId }: Props) {
-  const { tasks } = useContext(UserContext) as UserContextType
+  const { tasks, token } = useContext(UserContext) as UserContextType
   const taskDetail = tasks.find(task => task.id.toString() === taskId)
+  const router = useRouter()
+
+  useEffect(() => {
+    if (!token) {
+      router.replace('/') // or your login page path
+    }
+  }, [token, router])
+
+  if (!token) {
+    return null
+  }
+
 
   if (!taskDetail) {
     return <p>Task not found or not loaded yet.</p>
