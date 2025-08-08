@@ -1,11 +1,5 @@
 import TaskDetailsClient from "./TaskDetailsClient"
 
-interface PageProps {
-  params: {
-    id: string
-  }
-}
-
-export default function TaskDetailsPage({ params }: PageProps) {
+export default function TaskDetailsPage({ params }: { params: { id: string }}) {
   return <TaskDetailsClient taskId={params.id} />
 }
